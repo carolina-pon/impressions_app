@@ -8,9 +8,10 @@
 ## 詳細
 映画や本などの作品鑑賞後、感想を書いてシェアできるアプリ。  
 鑑賞して消費するだけでなく、読みたい人、観たい人と感想を共有できたら楽しそうだと思ったので。  
-## テーブル一覧
-### impressionsテーブル
 
+## テーブル一覧
+
+### impressionsテーブル
 |キー|カラム名|データ型|制約 or オプション|
 |:----|:----|:----|:----|
 |PK|ID| | |
@@ -18,10 +19,8 @@
 | |description|text|null: false|
 |FK|user_id|reference|foreign_key: true|
 |FK|category_id|reference|foreign_key: true|
-​
-​
+
 ### usersテーブル
-​
 |キー|カラム名|データ型|制約 or オプション|
 |:----|:----|:----|:----|
 |PK|ID| | |
@@ -29,16 +28,14 @@
 | |email|string|null: false|
 | |password_digest|string|null: false|
 | |admin|boolean|default: false, null: false|
-​
+
 ### categoriesテーブル
-​
 |キー|カラム名|データ型|制約orオプション|
 |:----|:----|:----|:----|
 |PK|ID| | |
 | |name|string|null: false|
-​
+
 ## エンドポイント表
-​
 |HTTP verb|URL|Controller#Action|機能名|
 |:----|:----|:----|:----|
 |get|/impressions|impressions#index|感想一覧機能|
@@ -55,4 +52,3 @@
 |get|/login|sessions#new|ログイン情報入力機能|
 |post|/login|sessions#create|ログイン情報認証機能|
 |desete|/logout|sessions#destroy|ログアウト機能|
-​
