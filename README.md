@@ -51,4 +51,4 @@
 |delete|admin/users/id|admin/users#destroy|ユーザー削除機能|
 |get|/login|sessions#new|ログイン情報入力機能|
 |post|/login|sessions#create|ログイン情報認証機能|
-|desete|/logout|sessions#destroy|ログアウト機能|
+|delete|/logout|sessions#destroy|ログアウト機能|
