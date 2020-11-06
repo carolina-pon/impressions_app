@@ -1,2 +1,23 @@
+h4 感想詳細
 
-h4 感想詳細ページ
+.nav.justify-content-end
+  = link_to '一覧', impressions_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+    tr
+      th= Impression.human_attribute_name(:id)
+      td= @impression.id
+    tr
+      th= Impression.human_attribute_name(:title)
+      td= @impression.title
+    tr
+      th= Impression.human_attribute_name(:description)
+      td= simple_format(h(@impression.description), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= Impression.human_attribute_name(:created_at)
+      td= @impression.created_at
+    tr
+          th= Impression.human_attribute_name(:updated_at)
+          td= @impression.updated_at
+
+    
