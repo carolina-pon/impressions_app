@@ -1,8 +1,10 @@
 class ImpressionsController < ApplicationController
   def index
+    @impressions = Impression.limit(4).order("id DESC")
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -16,6 +18,7 @@ class ImpressionsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
