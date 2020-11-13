@@ -8,4 +8,10 @@
   .form-group
     = f.label :description
     = f.text_area :description, rows: 5, class: 'form-control', id: 'impression_description'
+  .form-group
+    = f.label :category
+    select.form-control
+      <option>小説</option>
+      <option>映画</option>
+      <option>技術書</option>
   = f.submit nil, class: 'btn btn-primary'
