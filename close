@@ -1,0 +1,7 @@
+ id |   name   |       email        |                       password_digest                        |         created_at         |         updated_at         | admin 
+----+----------+--------------------+--------------------------------------------------------------+----------------------------+----------------------------+-------
+  1 | 匿名     | user@example.com   | digest                                                       | 2020-11-10 03:07:54.6582   | 2020-11-10 03:07:54.6582   | f
+  3 | ユーザー | sample@example.com | $2a$12$o.rWDYrr/AqVag9/veIC7e3h0W9EzTRi1lMlhAta/QmFqAoWN5x32 | 2020-11-10 03:16:09.923291 | 2020-11-10 03:16:09.923291 | f
+  4 | admin    | admin@example.com  | $2a$12$NMwvpiwFBA8Hi1HVVktkCOSRVOfsQbGI9CfY557mjI2l/xVlvyEwy | 2020-11-12 07:24:29.853228 | 2020-11-12 07:24:29.853228 | t
+(3 rows)
+
