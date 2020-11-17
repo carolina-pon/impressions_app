@@ -1,0 +1,8 @@
+h4 カテゴリー登録
+
+
+= form_with model: @category, local: true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'category_name'
+  = f.submit nil, class: 'btn btn-primary'

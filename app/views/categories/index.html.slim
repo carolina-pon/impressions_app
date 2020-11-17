@@ -1,0 +1,5 @@
+h4 カテゴリー一覧
+= link_to 'カテゴリー登録',new_category_path, class: 'nav-link' 
+
+- @categories.each do |category|
+  = category.name

@@ -40,6 +40,10 @@ class ImpressionsController < ApplicationController
   private
   
   def impression_params
-    params.require(:impression).permit(:title, :description)
+    params.require(:impression).permit(:title, :description, :user_id, :category_id)
   end
+
+  # def set_categories
+  #   @categories = Category.all
+  # end
 end
