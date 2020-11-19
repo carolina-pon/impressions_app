@@ -15,24 +15,27 @@ class ImpressionsController < ApplicationController
     @impression = Impression.new(impression_params.merge(user_id: current_user.id))
 
     if @impression.save
-    redirect_to @impression, notice: "#{@impression.title} の感想を登録しました！"
+      redirect_to @impression, notice: "#{@impression.title} の感想を登録しました！"
     else
       render :new
     end
   end
 
   def edit
-    @impressions = current_user.Impressions.find(params[:id])
+    @impression = current_user.impressions.find(params[:id])
   end
 
   def update
-    @impression = current_user.Impressions.find(params[:id])
-    impression.update(impression_params)
-    redirect_to impressions_url, notice: "#{impression.title}の感想を更新しました！"
+    @impression = current_user.impressions.find(params[:id])
+    if @impression.update(impression_params)
+      redirect_to impressions_url, notice: "#{@impression.title}の感想を更新しました！"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    impression = current_user.Impressions.find(params[:id])
+    impression = current_user.impressions.find(params[:id])
     impression.destroy
     redirect_to impressions_url, notice: "#{impression.title}の感想を削除しました。"
   end

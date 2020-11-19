@@ -1,0 +1,8 @@
+.nav.justify-content-end
+  = link_to 'カテゴリー一覧', categories_path, class: 'nav-link'
+
+= form_with model: @category, local: true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'category_name'
+  = f.submit nil, class: 'btn btn-primary'

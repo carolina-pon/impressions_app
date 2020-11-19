@@ -1,12 +1,12 @@
 h4 感想詳細
 
 .nav.justify-content-end
-  = link_to '一覧', impressions_path, class: 'nav-link'
+  = link_to '感想一覧', impressions_path, class: 'nav-link'
 table.table.table-hover
   tbody
     tr
-      th= Impression.human_attribute_name(:id)
-      td= @impression.id
+      th= Impression.human_attribute_name(:user_id)
+      td= @impression.user_id
     tr
       th= Impression.human_attribute_name(:title)
       td= @impression.title
@@ -14,7 +14,7 @@ table.table.table-hover
       th= Impression.human_attribute_name(:description)
       td= simple_format(h(@impression.description), {}, sanitize: false, wrapper_tag: "div")
     tr
-      th= Impression.human_attribute_name(:category_id)
+      th= Category.human_attribute_name(:category_id)
       td= @impression.category_id
     tr
       th= Impression.human_attribute_name(:created_at)
@@ -22,7 +22,6 @@ table.table.table-hover
     tr
       th= Impression.human_attribute_name(:updated_at)
       td= @impression.updated_at
-
 = link_to '編集', edit_impression_path(@impression), class: 'btn btn-primary mr-3'
 = link_to '削除', @impression, method: :delete, data: { confirm: "#{@impression.title}を削除しますか？"}, class: 'btn btn-danger mr-3'
 

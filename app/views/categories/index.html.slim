@@ -1,5 +1,13 @@
 h4 カテゴリー一覧
-= link_to 'カテゴリー登録',new_category_path, class: 'nav-link' 
+= link_to 'カテゴリー登録',new_category_path, class: 'btn btn-primary'
 
-- @categories.each do |category|
-  = category.name
+
+table.table.table-hover
+  tbody
+  - @categories.each do |category|
+    tr
+      th= Category.human_attribute_name(:name)
+      td= category.name
+      td
+        = link_to '編集', edit_category_path(category), class: 'btn btn-primary mr-3'
+        = link_to '削除', category, method: :delete, data: { confirm: "カテゴリー名「#{category.name}」を削除しますか？"}, class: 'btn btn-danger mr-3'
