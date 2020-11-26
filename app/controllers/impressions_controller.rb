@@ -9,6 +9,7 @@ class ImpressionsController < ApplicationController
 
   def new
     @impression = Impression.new
+    @categories = Category.all
   end
 
   def create

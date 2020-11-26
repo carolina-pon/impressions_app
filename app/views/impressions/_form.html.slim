@@ -10,5 +10,5 @@
     = f.text_area :description, rows: 5, class: 'form-control', id: 'impression_description'
   .form-group
     = f.label :category
-    = f.collection_select(:category_id, Category.all, :id, :name, {prompt: "カテゴリーを選択してください"}) 
+    = f.collection_select(:category_id, @categories, :id, :name, {prompt: "カテゴリーを選択してください"}, class: 'form-control')
   = f.submit nil, class: 'btn btn-primary'
