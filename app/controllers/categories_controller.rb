@@ -9,7 +9,6 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    @user = User.find
   end
 
   def create

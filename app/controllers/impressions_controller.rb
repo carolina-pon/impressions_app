@@ -1,6 +1,6 @@
 class ImpressionsController < ApplicationController
   def index
-    @impressions = Impression.limit(4).order("id DESC")
+    @impressions = Impression.limit(12).order("id DESC")
   end
 
   def show
@@ -9,6 +9,7 @@ class ImpressionsController < ApplicationController
 
   def new
     @impression = Impression.new
+    @categories = Category.all
   end
 
   def create
