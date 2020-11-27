@@ -15,7 +15,7 @@ table.table.table-hover
       td= simple_format(h(@impression.description), {}, sanitize: false, wrapper_tag: "div")
     tr
       th= Category.human_attribute_name(:category_id)
-      td= @impression.category_id
+      td= @categories.name
     tr
       th= Impression.human_attribute_name(:created_at)
       td= @impression.created_at

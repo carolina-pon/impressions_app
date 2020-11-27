@@ -5,6 +5,7 @@ class ImpressionsController < ApplicationController
 
   def show
     @impression = Impression.find(params[:id])
+    @categories = Category.all
   end
 
   def new
