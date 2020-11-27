@@ -3,7 +3,7 @@ class ImpressionsController < ApplicationController
     before_action :set_impression, only: [:edit, :update, :destroy]
 
   def index
-    @impressions = Impression.limit(12).order("id DESC")
+    @impressions = Impression.order("id DESC")
   end
 
   def show
