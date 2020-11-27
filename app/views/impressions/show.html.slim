@@ -5,7 +5,7 @@ h4 感想詳細
 table.table.table-hover
   tbody
     tr
-      th= Impression.human_attribute_name(:user_id)
+      th= Impression.human_attribute_name(:user_name)
       td= @impression.user_id
     tr
       th= Impression.human_attribute_name(:title)
@@ -14,8 +14,8 @@ table.table.table-hover
       th= Impression.human_attribute_name(:description)
       td= simple_format(h(@impression.description), {}, sanitize: false, wrapper_tag: "div")
     tr
-      th= Category.human_attribute_name(:category_id)
-      td= @categories.name
+      th= Impression.human_attribute_name(:category_name)
+      td= @impression.category_id
     tr
       th= Impression.human_attribute_name(:created_at)
       td= @impression.created_at
